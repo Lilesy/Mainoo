@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Property</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: 0.3s;
+        }
+        body.dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            margin-top: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        body.dark-mode .container {
+            background: #1e1e1e;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        body.dark-mode input, body.dark-mode textarea {
+            background: #333;
+            color: white;
+            border: 1px solid #555;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        body.dark-mode button {
+            background: #0056b3;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .dark-mode-toggle {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: right;
+            padding: 8px 15px;
+            margin-bottom: 30px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        body.dark-mode .dark-mode-toggle {
+            background: #0056b3;
+        }
+        .property-list {
+            margin-top: 20px;
+        }
+        .property {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        body.dark-mode .property {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
+    </header>
+
+    <div class="container">
+        <h2>Sell Your Property</h2>
+        <form id="propertyForm">
+            <input type="text" id="title" placeholder="Property Title" required>
+            <textarea id="description" placeholder="Property Description" required></textarea>
+            <input type="text" id="price" placeholder="Price" required>
+            <input type="file" id="image" accept="image/*" required>
+            <input type="text" id="sellerName" placeholder="Your Name" required>
+            <input type="email" id="sellerEmail" placeholder="Your Email" required>
+            <button type="submit">Submit Property</button>
+        </form>
+        <div class="property-list" id="propertyList"></div>
+    </div>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark-mode"));
+        }
+        
+        window.onload = () => {
+            if (localStorage.getItem("darkMode") === "true") {
+                document.body.classList.add("dark-mode");
+            }
+        };
+
+        document.getElementById("propertyForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const price = document.getElementById("price").value;
+            const sellerName = document.getElementById("sellerName").value;
+            const sellerEmail = document.getElementById("sellerEmail").value;
+            const imageInput = document.getElementById("image");
+            
+            if (imageInput.files.length > 0) {
+                const imageUrl = URL.createObjectURL(imageInput.files[0]);
+                
+                const propertyList = document.getElementById("propertyList");
+                const propertyDiv = document.createElement("div");
+                propertyDiv.classList.add("property");
+                propertyDiv.innerHTML = `
+                    <h3>${title}</h3>
+                    <img src="${imageUrl}" alt="Property Image" style="width:100%; border-radius:5px; margin-top:10px;">
+                    <p>${description}</p>
+                    <strong>Price: ${price}</strong>
+                    <p>Seller: ${sellerName} | Email: ${sellerEmail}</p>
+                `;
+                
+                propertyList.appendChild(propertyDiv);
+                document.getElementById("propertyForm").reset();
+            }
+        });
+    </script>
+</body>
+</html>

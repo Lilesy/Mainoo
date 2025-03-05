@@ -1,0 +1,289 @@
+.header {
+    background-color:black;
+    color:blueviolet;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration:black;
+}
+
+footer {
+    background-color: cadetblue;
+    color:black;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-container div {
+    margin: 1rem;
+}
+
+.footer-container a {
+    color: #000;
+    text-decoration: dotted;
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.search-form input, .search-form select, .search-form button {
+padding: 10px;
+font-size: 1rem;
+border: 1px solid black;
+border-radius: 5px;
+}
+
+.search-form button {
+    background-color: antiquewhite;
+    color: black;
+    border: 0cap;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: antiquewhite;
+}
+
+.feedback {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.feedback .feedback {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback h4 {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: bisque;
+}
+
+.property-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.property-card {
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgbba(0, 0, 0, 0.1);
+}
+
+.property-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.property-card button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.property-card button:hover {
+    background-color: #000;
+}
+
+.home {
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.home-text {
+    background: rgba(red, green, blue, alpha);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.home buttton {
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.home button:hover {
+    background-color: #000;
+}
+  
+  /* Services Section */
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .service-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 1rem 0;
+  }
+  
+  .service-card p {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Contact Info Section */
+  .contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-info h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .contact-info p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .contact-info .info p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* Contact Form Section */
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .map {
+    margin: 20px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  #scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+  }
+  
+  #scrollToTop:hover {
+    background-color: #555;
+  }
+
+  .hero-slider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+
+  .h1 {
+    text-align: center;
+    background-image: -moz-linear-gradient();
+  }

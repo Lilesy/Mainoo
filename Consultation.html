@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Consultation Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Book a Consultation</h2>
+        <form id="consultationForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="tel" id="phone" placeholder="Phone Number" required>
+            <input type="date" id="date" required>
+            <select id="time" required>
+                <option value="">Select Time</option>
+                <option value="10:00 AM">10:00 AM</option>
+                <option value="12:00 PM">12:00 PM</option>
+                <option value="2:00 PM">2:00 PM</option>
+                <option value="4:00 PM">4:00 PM</option>
+            </select>
+            <button type="submit">Book Now</button>
+        </form>
+        <p id="confirmationMessage" style="color: green;"></p>
+    </div>
+    <script>
+        document.getElementById('consultationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('confirmationMessage').innerText = 'Your consultation has been booked successfully!';
+        });
+    </script>
+</body>
+</html>
